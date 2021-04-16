@@ -1,0 +1,6 @@
+- id: "journal.created.success"
+  translation: "Journal was successfully created."
+- id: "journal.updated.success"
+  translation: "Journal was successfully updated."
+- id: "journal.destroyed.success"
+  translation: "Journal was successfully destroyed."

@@ -1,0 +1,8 @@
+<div class="py-4 mb-2">
+  <h3 class="d-inline-block">Edit Journal</h3>
+</div>
+
+<%= formFor(journal, {action: journalPath({ journal_id: journal.ID }), method: "PUT"}) { %>
+  <%= partial("journals/form.html") %>
+  <%= linkTo(journalPath({ journal_id: journal.ID }), {class: "btn btn-warning", "data-confirm": "Are you sure?", body: "Cancel"}) %>
+<% } %>
