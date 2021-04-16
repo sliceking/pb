@@ -4,17 +4,22 @@ import (
 	"encoding/json"
 	"github.com/gobuffalo/pop/v5"
 	"github.com/gobuffalo/validate/v3"
+	"github.com/gobuffalo/validate/v3/validators"
 	"github.com/gofrs/uuid"
 	"time"
-	"github.com/gobuffalo/validate/v3/validators"
 )
+
 // Journal is used by pop to map your journals database table to your go code.
 type Journal struct {
-    ID uuid.UUID `json:"id" db:"id"`
-    Title string `json:"title" db:"title"`
-    Body string `json:"body" db:"body"`
-    CreatedAt time.Time `json:"created_at" db:"created_at"`
-    UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
+	ID    uuid.UUID `json:"id" db:"id"`
+	Title string    `json:"title" db:"title"`
+	Body  string    `json:"body" db:"body"`
+
+	User   User      `belongs_to:"user"`
+	UserID uuid.UUID `db:"user_id"`
+
+	CreatedAt time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
 }
 
 // String is not required by pop and may be deleted

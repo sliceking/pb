@@ -21,6 +21,9 @@ type User struct {
 	Email        string    `json:"email" db:"email"`
 	PasswordHash string    `json:"password_hash" db:"password_hash"`
 
+	// Associations
+	Journals Journals `has_many:"journals" order_by:"created_at desc"`
+
 	Password             string `json:"-" db:"-"`
 	PasswordConfirmation string `json:"-" db:"-"`
 }

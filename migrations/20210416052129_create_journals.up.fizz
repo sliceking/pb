@@ -2,5 +2,8 @@ create_table("journals") {
 	t.Column("id", "uuid", {primary: true})
 	t.Column("title", "string", {})
 	t.Column("body", "string", {})
+	t.Column("user_id", "uuid", {})
 	t.Timestamps()
+
+	t.ForeignKey("user_id", {"users": ["id"]}, {"on_delete": "cascade"})
 }
