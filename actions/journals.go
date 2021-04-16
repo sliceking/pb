@@ -1,12 +1,11 @@
 package actions
 
 import (
-
   "fmt"
-  "net/http"
   "github.com/gobuffalo/buffalo"
   "github.com/gobuffalo/pop/v5"
   "github.com/gobuffalo/x/responder"
+  "net/http"
   "pb/models"
 )
 
@@ -98,8 +97,10 @@ func (v JournalsResource) New(c buffalo.Context) error {
 // Create adds a Journal to the DB. This function is mapped to the
 // path POST /journals
 func (v JournalsResource) Create(c buffalo.Context) error {
+  u := c.Value("current_user").(*models.User)
   // Allocate an empty Journal
   journal := &models.Journal{}
+  journal.UserID = u.ID
 
   // Bind journal to the html form elements
   if err := c.Bind(journal); err != nil {

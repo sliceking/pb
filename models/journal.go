@@ -16,7 +16,7 @@ type Journal struct {
 	Body  string    `json:"body" db:"body"`
 
 	User   User      `belongs_to:"user"`
-	UserID uuid.UUID `db:"user_id"`
+	UserID uuid.UUID `json:"user_id" db:"user_id"`
 
 	CreatedAt time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`

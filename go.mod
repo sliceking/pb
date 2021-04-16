@@ -14,10 +14,11 @@ require (
 	github.com/gobuffalo/pop/v5 v5.3.2
 	github.com/gobuffalo/suite/v3 v3.0.2
 	github.com/gobuffalo/validate/v3 v3.1.0
-	github.com/gobuffalo/x v0.1.0 // indirect
+	github.com/gobuffalo/x v0.1.0
 	github.com/gofrs/uuid v3.2.0+incompatible
 	github.com/markbates/grift v1.5.0
 	github.com/pkg/errors v0.9.1
+	github.com/sirupsen/logrus v1.4.2
 	github.com/unrolled/secure v0.0.0-20190103195806-76e6d4e9b90c
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 )

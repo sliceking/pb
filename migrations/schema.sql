@@ -86,11 +86,11 @@ CREATE UNIQUE INDEX schema_migration_version_idx ON public.schema_migration USIN
 
 
 --
--- Name: journals journals_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+-- Name: journals journals_users_id_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.journals
-    ADD CONSTRAINT journals_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id) ON DELETE CASCADE;
+    ADD CONSTRAINT journals_users_id_fk FOREIGN KEY (user_id) REFERENCES public.users(id);
 
 
 --
