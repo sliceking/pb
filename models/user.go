@@ -77,6 +77,14 @@ func (u *User) Validate(tx *pop.Connection) (*validate.Errors, error) {
 				return !b
 			},
 		},
+		&validators.FuncValidator{
+			Field:   u.Email,
+			Name:    "Email",
+			Message: "%s is an invalid email",
+			Fn: func() bool {
+				return IsEmailValid(u.Email)
+			},
+		},
 	), err
 }
 
