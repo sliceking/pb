@@ -65,6 +65,8 @@ func App() *buffalo.App {
 		app.Use(SetCurrentUser)
 		app.Use(Authorize)
 
+		app.Middleware.Skip(Authorize, HomeHandler)
+
 		//Routes for Auth
 		auth := app.Group("/auth")
 		auth.GET("/", AuthLanding)
