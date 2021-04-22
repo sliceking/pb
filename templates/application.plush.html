@@ -42,11 +42,11 @@
         </form>
         <ul class="nav navbar-nav navbar-right">
           <%= if (current_user) { %>
-            <h1><%= current_user.Email %></h1>
-            <%= linkTo(authPath(), {data-method: "DELETE"}){ %>Sign Out<% } %>
+            <li class="mr-2 nav-link disabled"><%= current_user.Email %></li>
+            <%= linkTo(authPath(), {data-method: "DELETE", class: "btn btn-secondary", body: "Sign Out"}) %>
           <% } else { %>
-            <%= linkTo(newAuthPath(), {class: "btn btn-primary mr-2"}){ %>Sign In<% } %>
-            <%= linkTo(newUsersPath(), {class: "btn btn-primary"}){ %>Register<% } %>
+            <%= linkTo(newAuthPath(), {class: "btn btn-primary mr-2", body: "Sign In"}) %>
+            <%= linkTo(newUsersPath(), {class: "btn btn-primary", body: "Register"}) %>
           <% } %>
         </ul>
       </div>
